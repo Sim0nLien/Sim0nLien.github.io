@@ -2,23 +2,23 @@
 
 ## Welcome to My GitHub Page!
 
-Hello! I'm Simon Lienard, and this is my personal GitHub Pages site. Here, you'll find projects, experiments, and resources that showcase my work and interests in programming, technology, and beyond.
+## Sections in My GitHub.io Website
+
+You can create sections in your GitHub.io website by using Markdown headers. For example:
 
 ### About Me
-- **Passionate Developer**: I enjoy solving problems and building innovative solutions.
-- **Tech Enthusiast**: Always exploring new tools, frameworks, and technologies.
-- **Lifelong Learner**: Continuously improving my skills and knowledge.
+Write a brief introduction about yourself here.
 
 ### Projects
-Check out some of my featured projects:
-- [Project 1](#): A brief description of your project.
-- [Project 2](#): Another exciting project to explore.
-- [More Projects](#): Visit my repositories for more!
+List your projects with links to their repositories or live demos.
 
-### Get in Touch
-Feel free to connect with me:
-- [GitHub Profile](https://github.com/Sim0nLien)
-- [LinkedIn](#) (Add your LinkedIn link here)
-- [Email](mailto:your-email@example.com)
+### Blog
+Share your thoughts, tutorials, or updates here.
 
-Thanks for visiting my page!
+### Contact
+Provide your contact information or links to your social media profiles.
+
+Feel free to customize these sections to suit your needs!
+
+[About Me](about.md)  
+
