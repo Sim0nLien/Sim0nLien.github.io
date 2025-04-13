@@ -1,26 +1,7 @@
 # Sim0nLien.github.io
 
-## Welcome to My GitHub Page!
 
-## Sections in My GitHub.io Website
-
-You can create sections in your GitHub.io website by using Markdown headers. For example:
-
-### About Me
-Write a brief introduction about yourself here.
-
-### Projects
-List your projects with links to their repositories or live demos.
-
-### Blog
-Share your thoughts, tutorials, or updates here.
-
-### Contact
-Provide your contact information or links to your social media profiles.
-
-Feel free to customize these sections to suit your needs!
-
-[About Me](about.md)  
+[About Me](Web_page/about.md)  
 
 ```html
 <nav>
@@ -29,4 +10,8 @@ Feel free to customize these sections to suit your needs!
 
     </ul>
 </nav>
+
+
+```html
+<iframe src="notebook.ipynb" width="100%" height="600px" frameborder="0"></iframe>
 ```
