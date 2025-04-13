@@ -22,3 +22,11 @@ Feel free to customize these sections to suit your needs!
 
 [About Me](about.md)  
 
+```html
+<nav>
+    <ul>
+        <li><a href="about.md">About Me</a></li>
+
+    </ul>
+</nav>
+```
