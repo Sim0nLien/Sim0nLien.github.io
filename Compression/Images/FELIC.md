@@ -1,4 +1,6 @@
-## Compression sans perte FELIC  
+![Image originale](FELICS.png)
+
+Fast Efficient & Lossless Image Compression System 
 
 ### L'Image
 
@@ -57,8 +59,6 @@ plt.show()
     
 
 
-
-
 ## Les informations de l'imamge
 
 L'entropie : 
@@ -75,19 +75,8 @@ def Entropy(matrice):
     entropie = -np.sum(hist * np.log2(hist))
     return entropie
 
+print("Entropie de l'image originale :", Entropy(image_array))
 ```
 
-    [[137 137 138 ...  96  94  93]
-     [137 137 137 ...  94  96  99]
-     [137 137 137 ...  95  98  99]
-     ...
-     [107 109 115 ...  40  39  42]
-     [111 111 116 ...  40  41  44]
-     [102 102 110 ...  41  43  47]]
-
-
-
-    
-![png](FELIC_files/FELIC_7_1.png)
-    
+    Entropie de l'image originale : 7.415894872349124
 
