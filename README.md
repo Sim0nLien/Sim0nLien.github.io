@@ -5,7 +5,7 @@ Voici mon site :
 
 ##COMPRESSION
 
-[RICE](Codage/Rice.md)
+[RICE](Compression/Codage/Rice.md)
 
 [FELIC](Compression/Images/FELIC.md)  
 
