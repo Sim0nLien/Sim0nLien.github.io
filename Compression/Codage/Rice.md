@@ -88,35 +88,32 @@ Voici le code qui permet de réaliser le codage de Rice
 
 ```python
 def Rice_encode(value, k):
-    quotient, reste = division(value, k)
-    result = []
+    diviseur = 2 ** k
+    quotient = value // diviseur
+    reste = value % diviseur
 
-    for i in range(0, quotient):
-        result.append(1)
+    result = []
+    result.extend([1] * quotient)
     result.append(0)
 
-    res = [0] * k
-    index = k - 1
-    while reste > 0 and index >= 0:
-        res[index] = reste % 2
-        reste >>= 1
-        index -= 1
+    for i in reversed(range(k)):
+        result.append((reste >> i) & 1)
 
-    result.extend(res)
     return result
+
 
 #Exemple d'utilisation :
 
 value = 25
-k = 10
+k = 4
 
 encoded_value = Rice_encode(value, k)
 print("valeur codée : ", encoded_value)
 print(len(Rice_encode(value, k)))
 ```
 
-    valeur codée :  [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1]
-    13
+    valeur codée :  [1, 0, 1, 0, 0, 1]
+    6
 
 
 ### Petite étude de l'intérêt 📊
@@ -125,7 +122,7 @@ print(len(Rice_encode(value, k)))
 ```python
 # Les résultats codage sans Rice
 
-entier = np.linspace(1,100, num=100, dtype=int)
+entier = np.linspace(1,1000, num=1000, dtype=int)
 
 sans_rice = []
 avec_rice = []
@@ -160,9 +157,21 @@ plt.show()
     
 
 
+```markdown
+### Programme en C++ pour le codage de Rice
 
-## TODO : ajouter le décodage dans un lien : 
 
+```cpp
+int main() {
+ 
+    return 0;
+}
+```
+
+
+
+
+[Décodage de Rice](decodage_rice.md)
 
 
 SLIENARD

@@ -6,8 +6,8 @@
 ```python
 # Les variables : 
 
-binaires = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1]
-k = 10
+binaires = [1, 0, 1, 0, 0, 1]
+k = 4
 ```
 
 
@@ -16,22 +16,26 @@ import numpy as numpy
 
 
 def Rice_decode(encoded, k):
-    valeur = 0
     parse = 0
+    q = 0
+
+    # Lire le code unaire : nombre de 1 avant le premier 0
     while encoded[parse] == 1:
+        q += 1
         parse += 1
-    valeur = parse * k
-    print("valeur = ", valeur)
+
+    # Sauter le '0' final du code unaire
     parse += 1
-    reste = 0
-    test = int(numpy.log2(k))
-    for i in range(test, 0, -1):
-        print("i = ", i)
-        reste = reste + encoded[parse + i] * (2 ** i)
-    parse += 1
-    print("reste", reste)
-    valeur += reste
+
+    # Lire k bits pour le reste
+    r_bits = encoded[parse:parse + k]
+    r_str = ''.join(str(bit) for bit in r_bits)  # convertir en chaîne binaire
+    r = int(r_str, 2)
+
+    # Calculer la valeur originale
+    valeur = q * (2 ** k) + r
     return valeur
+
 
 
 
@@ -47,10 +51,5 @@ print("Le résultat de la décompression est : ", resultat)
 
 ```
 
-    valeur =  20
-    i =  3
-    i =  2
-    i =  1
-    reste 0
-    Le résultat de la décompression est :  20
+    Le résultat de la décompression est :  25
 

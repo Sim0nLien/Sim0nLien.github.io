@@ -63,7 +63,6 @@ $$ Entropy = \sum_{k=0}^{255} p_k \log_2(p_k)$$
 
 ```python
 def Entropy(matrice):
-    # Calcul de l'entropie d'une matrice
     hist, _ = np.histogram(matrice.flatten(), bins=256, range=(0, 255), density=True)
     hist = hist[hist > 0]
     entropie = -np.sum(hist * np.log2(hist))
@@ -185,26 +184,29 @@ for i in range(-1,2):
 
 print(len(result))
 
-#je ceux une image en 256*256 avec des pixels noir si ca vaut -1 ou 1 et blanc si ca vaut 0
+# je veux une image en 256*256 avec des pixels verts si ça vaut -1, rouges si ça vaut 1, et bleus si ça vaut 0
 
-def create_image(result):
+def create_colored_image(result):
     h = 256
     w = 256
-    image = np.zeros((h, w), dtype=np.uint8)
+    image = np.zeros((h, w, 3), dtype=np.uint8)  # Image RGB
     for i in range(h):
         for j in range(w):
-            if result[i * w + j] == -1 or result[i * w + j] == 1:
-                image[i, j] = 0
+            if result[i * w + j] == -1:
+                image[i, j] = [0, 255, 0]  # Vert
+            elif result[i * w + j] == 1:
+                image[i, j] = [255, 0, 0]  # Rouge
             else:
-                image[i, j] = 255
+                image[i, j] = [0, 0, 255]  # Bleu
     return image
-image_result = create_image(result)
-plt.imshow(image_result, cmap='gray')
-plt.title('Image binaire')
+
+image_result = create_colored_image(result)
+plt.imshow(image_result) 
+plt.title('Image colorée')
 plt.axis('off')
 plt.show()
 
-#je veux que tu m'enregistre resultat dans un fichier csv
+# je veux que tu m'enregistres le résultat dans un fichier csv
 np.savetxt('result.csv', result, delimiter=',', fmt='%d')
 ```
 
@@ -219,3 +221,10 @@ np.savetxt('result.csv', result, delimiter=',', fmt='%d')
 ![png](FELIC_files/FELIC_12_1.png)
     
 
+
+
+
+
+```python
+
+```
