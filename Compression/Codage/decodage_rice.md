@@ -19,20 +19,16 @@ def Rice_decode(encoded, k):
     parse = 0
     q = 0
 
-    # Lire le code unaire : nombre de 1 avant le premier 0
     while encoded[parse] == 1:
         q += 1
         parse += 1
 
-    # Sauter le '0' final du code unaire
     parse += 1
 
-    # Lire k bits pour le reste
     r_bits = encoded[parse:parse + k]
-    r_str = ''.join(str(bit) for bit in r_bits)  # convertir en chaîne binaire
+    r_str = ''.join(str(bit) for bit in r_bits)
     r = int(r_str, 2)
 
-    # Calculer la valeur originale
     valeur = q * (2 ** k) + r
     return valeur
 

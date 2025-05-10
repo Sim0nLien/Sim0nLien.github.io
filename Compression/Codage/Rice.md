@@ -53,19 +53,12 @@ quotient, reste = division(value, k)
 
 result = []
 
-#On commence par coder le quotient :
-
 for i in range(0, quotient):
     result.append(1)
 
-#On ajoute un 0 : 
 
 result.append(0)
-
-#On ajoute le reste :
-
-# Donne la valeur binaire du reste sur k bits
-res = [0] * k  # Initialise une liste de k zéros
+res = [0] * k 
 
 index = k - 1
 while reste > 0 and index >= 0:
@@ -73,7 +66,7 @@ while reste > 0 and index >= 0:
     reste >>= 1
     index -= 1
 
-result.extend(res)  # Ajoute les bits du reste à la suite du résultat
+result.extend(res)
 print(result)
 ```
 
@@ -131,7 +124,7 @@ for i in enumerate(entier):
     #Sans Rice
     sans_rice.append(len(list(np.binary_repr(i[1], None))))
     #Avec Rice
-    best_idx = 1000 # valeur absurde
+    best_idx = 1000
     for j in range(1, 30):
         best = len(Rice_encode(i[1], best_idx))
         val = len(Rice_encode(i[1], j))
@@ -140,7 +133,7 @@ for i in enumerate(entier):
     avec_rice.append(best_idx)
 
 
-plt.figure(figsize=(12, 6))  # Augmenter la taille de l'image
+plt.figure(figsize=(12, 6))
 plt.plot(entier, sans_rice, label="sans Rice", color="skyblue", linewidth=2)
 plt.plot(entier, avec_rice, label="avec Rice", color="dodgerblue", linewidth=2)
 plt.xlabel("Valeur entière", fontsize=12)
